@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# Cars SPA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SPA-приложение для просмотра, сортировки, редактирования и удаления автомобилей, полученных через REST API.  
+Реализовано на **React + TypeScript + Redux Toolkit**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Цель
 
-## React Compiler
+Реализовать одностраничное приложение (SPA) с возможностью:
+- просмотра списка машин,
+- сортировки по году выпуска и цене,
+- редактирования данных,
+- удаления,
+- добавления новых автомобилей.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Реализованный функционал
+- Вывод списка машин (name, model, year, price),
+- Создание машины (name, model, year, color, price),
+- Редактирование машины по полям name и price (инлайн),
+- Удаление машины,
+- Сортировка по year и price (переключение asc/desc),
+- Дополнительно: Карта (Leaflet) с маркерами по latitude, longitude,
+- Проект на TypeScript,
+- Состояние через Redux Toolkit.
 
-## Expanding the ESLint configuration
+## Стек
+- React (Vite)
+- TypeScript
+- Redux Toolkit, react-redux
+- Axios — запросы к API
+- Leaflet / react-leaflet — карта
+- json-server — локальный REST API
+- CSS
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Запуск проекта
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Клонировать репозиторий:
+```bash
+git clone https://github.com/Viktorikata/Cars-spa.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. Перейти в папку проекта
+```bash
+cd cars-spa
 ```
+
+3. Установить зависимости: 
+```bash
+npm install
+```
+
+4. Запустить локальный API (json-server) 
+```bash
+npm run server
+```
+
+5. Запустить фронтенд 
+```bash
+npm run dev
+```
+
