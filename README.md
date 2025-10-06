@@ -25,13 +25,13 @@ SPA-приложение для просмотра, сортировки, ред
 - Состояние через Redux Toolkit.
 
 ## Стек
-- React (Vite)
-- TypeScript
-- Redux Toolkit, react-redux
-- Axios — запросы к API
-- Leaflet / react-leaflet — карта
-- json-server — локальный REST API
-- CSS
+- React (Vite),
+- TypeScript,
+- Redux Toolkit, react-redux,
+- Axios — запросы к API,
+- Leaflet / react-leaflet — карта,
+- json-server — локальный REST API,
+- CSS.
 
 ## Запуск проекта
 
